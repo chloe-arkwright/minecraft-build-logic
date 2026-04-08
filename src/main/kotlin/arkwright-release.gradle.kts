@@ -50,6 +50,8 @@ publishMods {
 			accessToken = providers.gradleProperty("app.arkwright.chloe.release.curseforge")
 			minecraftVersions.convention(listOf(versionMinecraft))
 			javaVersions.convention(listOf(the<JavaPluginExtension>().targetCompatibility))
+			clientRequired.convention(true)
+			serverRequired.convention(true)
 
 			projectId.convention(curseforgeProjectId as String)
 
