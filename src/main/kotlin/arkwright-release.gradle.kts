@@ -1,5 +1,3 @@
-import gradle.kotlin.dsl.accessors._0cb39c16b209519d61ee18b0fceac003.jar
-import gradle.kotlin.dsl.accessors._0cb39c16b209519d61ee18b0fceac003.java
 import me.modmuss50.mpp.ReleaseType
 
 plugins {
@@ -16,7 +14,7 @@ val versionFabricApi = findProperty("version.fabric.api")
 val versionFabricKotlin = findProperty("version.fabric.kotlin")
 
 publishMods {
-	tasks.jar.orNull?.also { jar ->
+	tasks.named<Jar>("jar").orNull?.also { jar ->
 		version = jar.archiveVersion
 		file = jar.archiveFile
 		type = if ("alpha" in projectVersion) {
@@ -51,7 +49,7 @@ publishMods {
 		curseforge {
 			accessToken = providers.gradleProperty("app.arkwright.chloe.release.curseforge")
 			minecraftVersions.convention(listOf(versionMinecraft))
-			javaVersions.convention(listOf(java.targetCompatibility))
+			javaVersions.convention(listOf(the<JavaPluginExtension>().targetCompatibility))
 
 			projectId.convention(curseforgeProjectId as String)
 
