@@ -1,0 +1,14 @@
+# Idea / plugins
+/.idea/
+Zig.iml
+
+# Gradle
+build/
+.gradle/
+run/
+
+# Java / Kotlin
+java_*.hprof
+.kotlin/
+
+.cache/
