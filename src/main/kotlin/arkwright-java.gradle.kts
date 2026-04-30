@@ -18,11 +18,11 @@ tasks {
 	jar {
 		inputs.property("archivesName", project.base.archivesName)
 
-		listOf(file("LICENSE"), rootProject.file("LICENSE"))
+		listOf(file("LICENSE"), rootDir.resolve("LICENSE"))
 			.firstOrNull(File::exists)
 			?.also { from(it) }
 
-		listOf(file("LICENSE-ASSETS"), rootProject.file("LICENSE-ASSETS"))
+		listOf(file("LICENSE-ASSETS"), rootDir.resolve("LICENSE-ASSETS"))
 			.firstOrNull(File::exists)
 			?.also { from(it) }
 	}
