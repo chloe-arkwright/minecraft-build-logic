@@ -2,9 +2,11 @@ plugins {
 	idea
 }
 
+// https://gradle.org/release-checksums/
+// https://docs.gradle.org/9.5.0/release-notes.html
 tasks.named<Wrapper>("wrapper") {
-	gradleVersion = "9.4.0"
-	distributionSha256Sum = "b21468753cb43c167738ee04f10c706c46459cf8f8ae6ea132dc9ce589a261f2"
+	gradleVersion = "9.5.0"
+	distributionSha256Sum = "a3c4ba4aca8f0075688b9c5b18939fd28e8cb4357c227da5c1d9f38343791439"
 	distributionType = Wrapper.DistributionType.ALL
 }
 
